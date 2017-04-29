@@ -1,0 +1,23 @@
+﻿@model  MvcTest.Models.UserDetails
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
+{
+    @Html.LabelFor(c => c.UserName)
+
+    @Html.TextBoxFor(x=>x.UserName)
+
+    <br/>
+
+    @Html.LabelFor(c=>c.PassWord)
+    
+    @Html.PasswordFor(x=>x.PassWord)
+
+    <br/>
+    <input type="submit" name="BtnSubmit" value="Login"/>
+}
+
+
+

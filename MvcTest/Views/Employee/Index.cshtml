@@ -1,0 +1,29 @@
+﻿@model EmployeeListViewModel
+@using MvcTest.ViewModels
+@{
+
+    ViewBag.Title = "Index";
+
+    //MvcTest.Models.Employee emp = (MvcTest.Models.Employee)ViewData["Employee"];
+    MvcTest.Models.Employee emp = (MvcTest.Models.Employee)ViewBag.Employee;
+}
+<a href="/Employee/AddNew">Add New</a>
+<hr />
+<div>
+    <table>
+        <tr>
+            <th>Employee Name</th>
+            <th>Salary</th>
+        </tr>
+        @foreach (EmployeeViewModel item in Model.Employees)
+            {
+            <tr>
+                <td> @item.EmployeeName </td>
+                <td style="background-color:@item.SalaryColor"> @item.Salary </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
