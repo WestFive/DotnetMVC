@@ -9,6 +9,7 @@ using MvcTest.Data_Access_Laye;
 
 namespace MvcTest.Controllers
 {
+    [Authorize]//需要授权
     public class EmployeeController : Controller
     {
         // GET: Test

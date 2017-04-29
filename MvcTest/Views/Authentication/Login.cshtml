@@ -3,6 +3,8 @@
     ViewBag.Title = "Login";
 }
 
+@Html.ValidationMessage("CredentialError", new { style = "color:red;" }) 
+
 @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
 {
     @Html.LabelFor(c => c.UserName)

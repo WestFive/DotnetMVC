@@ -7,7 +7,8 @@
     //MvcTest.Models.Employee emp = (MvcTest.Models.Employee)ViewData["Employee"];
     MvcTest.Models.Employee emp = (MvcTest.Models.Employee)ViewBag.Employee;
 }
-<a href="/Employee/AddNew">Add New</a>
+<a href="/Authentication/Logout">Logout</a></div>
+
 <hr />
 <div>
     <table>
@@ -22,8 +23,8 @@
                 <td style="background-color:@item.SalaryColor"> @item.Salary </td>
             </tr>
         }
-
+      
     </table>
-
+    <a href="/Employee/AddNew">Add New</a>
 </div>
 
