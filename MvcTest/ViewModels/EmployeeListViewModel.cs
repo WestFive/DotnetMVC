@@ -10,5 +10,7 @@ namespace MvcTest.ViewModels
         public List<ViewModels.EmployeeViewModel> Employees { get; set; }
         //public string userName { get; set; }
 
+        public FooterViewModel FooterData { get; set; }
+
     }
 }

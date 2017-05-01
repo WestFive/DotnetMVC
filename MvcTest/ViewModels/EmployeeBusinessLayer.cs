@@ -17,15 +17,20 @@ namespace MvcTest.ViewModels
             return sales.Employees.ToList();
         }
 
-        public bool IsVaildUser(UserDetails u)
+        public UserStatus IsVaildUser(UserDetails u)
         {
             if (u.UserName == "Admin" && u.PassWord == "Admin")
             {
-                return true;
+                return UserStatus.AuthenticatedAdmin;
+            }
+            else if (u.UserName == "User" && u.PassWord == "User")
+            {
+                return UserStatus.AuthentucatedUser;
+
             }
             else
             {
-                return false;
+                return UserStatus.NonAuthenticatedUser;
             }
         }
     }

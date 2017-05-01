@@ -7,7 +7,7 @@
     //MvcTest.Models.Employee emp = (MvcTest.Models.Employee)ViewData["Employee"];
     MvcTest.Models.Employee emp = (MvcTest.Models.Employee)ViewBag.Employee;
 }
-<a href="/Authentication/Logout">Logout</a></div>
+<a href="/Authentication/Logout">Logout</a>
 
 <hr />
 <div>
@@ -25,6 +25,12 @@
         }
       
     </table>
-    <a href="/Employee/AddNew">Add New</a>
+    @{ 
+        Html.RenderAction("GetAddNewLink");
+    }
 </div>
+
+@{ 
+    Html.RenderPartial("Footer", Model.FooterData);
+}
 

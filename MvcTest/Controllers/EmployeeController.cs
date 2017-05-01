@@ -40,6 +40,11 @@ namespace MvcTest.Controllers
             }
             employeeListViewModel.Employees = empViewModels;
             // employeeListViewModel.userName = "Admin";
+
+            employeeListViewModel.FooterData = new FooterViewModel();
+            employeeListViewModel.FooterData.CompanyName = "WestFive@CN";//Can be set to dynamic value
+            employeeListViewModel.FooterData.Year = DateTime.Now.Year.ToString();
+
             return View("Index", employeeListViewModel);
         }
 
@@ -55,6 +60,18 @@ namespace MvcTest.Controllers
 
             return Index();
 
+        }
+
+        public ActionResult GetAddNewLink()
+        {
+            if(Convert.ToBoolean(Session["IsAdmin"]))
+            {
+                return PartialView("AddNewLink");
+            }
+            else
+            {
+                return new EmptyResult();
+            }
         }
     }
 }
